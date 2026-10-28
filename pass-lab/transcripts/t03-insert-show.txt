@@ -1,0 +1,17 @@
+$ pass insert email/example-mail
+mkdir: created directory '~/.password-store/email'
+Enter password for email/example-mail: 
+Retype password for email/example-mail: 
+$ pass ls
+Password Store
+`-- email
+    `-- example-mail
+$ pass show email/example-mail
+sunrise-42-harbor
+$ pass insert web/mismatch-demo
+mkdir: created directory '~/.password-store/web'
+Enter password for web/mismatch-demo: 
+Retype password for web/mismatch-demo: 
+Error: the entered passwords do not match.
+$ pass ls web
+web

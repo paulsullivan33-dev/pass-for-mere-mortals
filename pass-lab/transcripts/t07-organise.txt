@@ -1,0 +1,30 @@
+$ printf 'velvet-11-compass\nvelvet-11-compass\n' | pass insert shopping/example-shop
+mkdir: created directory '~/.password-store/shopping'
+
+
+$ pass mv shopping/example-shop shopping/example-store
+~/.password-store/shopping/example-shop.gpg
+renamed '~/.password-store/shopping/example-shop.gpg' -> '~/.password-store/shopping/example-store.gpg'
+$ pass cp email/example-mail email/example-mail-old
+~/.password-store/email/example-mail.gpg
+'~/.password-store/email/example-mail.gpg' -> '~/.password-store/email/example-mail-old.gpg'
+$ pass ls
+Password Store
+|-- banking
+|   `-- example-bank
+|-- email
+|   |-- example-mail-old
+|   `-- example-mail
+|-- shopping
+|   `-- example-store
+|-- social
+|   `-- example-social
+|-- web
+`-- wifi
+    `-- home-router
+$ pass rm email/example-mail-old
+Are you sure you would like to delete email/example-mail-old? [y/N] y
+removed '~/.password-store/email/example-mail-old.gpg'
+$ pass ls email
+email
+`-- example-mail

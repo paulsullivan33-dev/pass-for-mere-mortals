@@ -1,0 +1,12 @@
+$ pass init 98E7C7561F88C7288694F63515837920394279EA
+mkdir: created directory '~/.password-store/'
+Password store initialized for 98E7C7561F88C7288694F63515837920394279EA
+$ cat ~/.password-store/.gpg-id
+98E7C7561F88C7288694F63515837920394279EA
+$ ls -la ~/.password-store/
+total 4
+drwx------ 1 root root 14 Oct 28 18:47 .
+drwxrwx--- 1 root root 30 Oct 28 18:47 ..
+-rw------- 1 root root 41 Oct 28 18:47 .gpg-id
+$ pass ls
+Password Store

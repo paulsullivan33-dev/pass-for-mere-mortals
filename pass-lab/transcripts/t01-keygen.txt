@@ -1,0 +1,19 @@
+$ gpg --batch --pinentry-mode loopback --passphrase 'lab-only-passphrase' \
+    --quick-generate-key 'Lab Keeper <keeper@lab.example.invalid>' default default never
+gpg: revocation certificate stored as '~/pass-lab/gnupg/openpgp-revocs.d/98E7C7561F88C7288694F63515837920394279EA.rev'
+$ gpg --list-keys
+~/pass-lab/gnupg/pubring.kbx
+----------------------------------------------------------------
+pub   ed25519 2026-10-28 [SC]
+      98E7C7561F88C7288694F63515837920394279EA
+uid           [ultimate] Lab Keeper <keeper@lab.example.invalid>
+sub   cv25519 2026-10-28 [E]
+
+$ gpg --list-secret-keys
+~/pass-lab/gnupg/pubring.kbx
+----------------------------------------------------------------
+sec   ed25519 2026-10-28 [SC]
+      98E7C7561F88C7288694F63515837920394279EA
+uid           [ultimate] Lab Keeper <keeper@lab.example.invalid>
+ssb   cv25519 2026-10-28 [E]
+

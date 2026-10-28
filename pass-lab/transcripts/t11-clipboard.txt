@@ -1,0 +1,7 @@
+$ pass show -c email/example-mail
+Error: No X11 or Wayland display detected
+exit: 1
+$ echo "DISPLAY is [$DISPLAY]"
+DISPLAY is []
+$ which xclip
+/usr/bin/xclip

@@ -1,0 +1,16 @@
+$ export PASSWORD_STORE_DIR=~/pass-lab/work-store
+$ pass init 98E7C7561F88C7288694F63515837920394279EA
+mkdir: created directory '~/pass-lab/work-store/'
+Password store initialized for 98E7C7561F88C7288694F63515837920394279EA
+$ printf 'tunnel-63-ember\ntunnel-63-ember\n' | pass insert vpn/example-vpn
+mkdir: created directory '~/pass-lab/work-store/vpn'
+
+
+$ pass ls
+Password Store
+`-- vpn
+    `-- example-vpn
+$ unset PASSWORD_STORE_DIR
+$ pass ls email
+email
+`-- example-mail

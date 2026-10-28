@@ -1,0 +1,8 @@
+$ pass generate social/example-social 24
+mkdir: created directory '~/.password-store/social'
+The generated password for social/example-social is:
+syha3.{V^"U(.N&~%bO`\?J_
+$ pass generate -n banking/example-bank 20
+mkdir: created directory '~/.password-store/banking'
+The generated password for banking/example-bank is:
+8pt22UhtiKTFeVBzY1vw

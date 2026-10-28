@@ -1,0 +1,24 @@
+$ pass show post-office/example
+Error: post-office/example is not in the password store.
+exit: 1
+$ GNUPGHOME=<empty keyring> pass show email/example-mail
+gpg: public key decryption failed: No secret key
+gpg: decryption failed: No secret key
+exit: 2
+$ gpg --batch --pinentry-mode loopback --passphrase 'wrong-passphrase' --decrypt ~/.password-store/email/example-mail.gpg
+gpg: encrypted with cv25519 key, ID CF67A51CDFE69FAF, created 2026-10-28
+      "Lab Teammate <teammate@lab.example.invalid>"
+gpg: encrypted with cv25519 key, ID 41763E1E0C6AD8EB, created 2026-10-28
+      "Lab Keeper <keeper@lab.example.invalid>"
+gpg: public key decryption failed: Bad passphrase
+gpg: decryption failed: Bad passphrase
+exit: 2
+$ cp ~/.password-store/email/example-mail.gpg corrupt.gpg; overwrite 4 bytes in the middle; gpg --batch --decrypt corrupt.gpg
+gpg: encrypted with cv25519 key, ID CF67A51CDFE69FAF, created 2026-10-28
+      "Lab Teammate <teammate@lab.example.invalid>"
+gpg: encrypted with cv25519 key, ID 41763E1E0C6AD8EB, created 2026-10-28
+      "Lab Keeper <keeper@lab.example.invalid>"
+gpg: ecdh failed in gcry_cipher_decrypt: Checksum error
+gpg: public key decryption failed: Checksum error
+gpg: decryption failed: Checksum error
+exit: 2

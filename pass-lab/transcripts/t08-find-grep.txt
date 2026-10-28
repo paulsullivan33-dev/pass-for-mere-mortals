@@ -1,0 +1,9 @@
+$ pass find example-b
+Search Terms: example-b
+`-- banking
+    `-- example-bank
+$ pass grep linen
+wifi/home-router:
+note: spare ethernet cable lives in the linen cupboard
+$ pass show wifi/home-router | head -n 1
+basement-router-88

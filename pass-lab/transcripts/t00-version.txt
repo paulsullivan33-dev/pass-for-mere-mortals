@@ -1,0 +1,17 @@
+$ pass version
+============================================
+= pass: the standard unix password manager =
+=                                          =
+=                  v1.7.4                  =
+=                                          =
+=             Jason A. Donenfeld           =
+=               Jason@zx2c4.com            =
+=                                          =
+=      http://www.passwordstore.org/       =
+============================================
+$ gpg --version | head -n 1
+gpg (GnuPG) 2.4.4
+$ git --version
+git version 2.43.0
+$ tree --version
+tree v2.1.1 (c) 1996 - 2023 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro

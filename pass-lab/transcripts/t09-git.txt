@@ -1,0 +1,83 @@
+$ git config --global init.defaultBranch main
+$ pass git init
+Initialized empty Git repository in ~/.password-store/.git/
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'root@htch-runtime.(none)')
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'root@htch-runtime.(none)')
+pass git init exit: 0
+$ pass git status --short | head -n 5
+A  .gitattributes
+A  .gpg-id
+A  banking/example-bank.gpg
+A  email/example-mail.gpg
+A  shopping/example-store.gpg
+$ git config --global user.name "Lab Keeper"
+$ git config --global user.email "keeper@lab.example.invalid"
+$ pass git add -A
+$ pass git commit -m "Add current contents of password store."
+[main (root-commit) a002b45] Add current contents of password store.
+ 7 files changed, 2 insertions(+)
+ create mode 100644 .gitattributes
+ create mode 100644 .gpg-id
+ create mode 100644 banking/example-bank.gpg
+ create mode 100644 email/example-mail.gpg
+ create mode 100644 shopping/example-store.gpg
+ create mode 100644 social/example-social.gpg
+ create mode 100644 wifi/home-router.gpg
+$ printf 'harbor-19-willow\nharbor-19-willow\n' | pass insert web/example-forum
+
+
+[main f5337ac] Add given password for web/example-forum to store.
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 web/example-forum.gpg
+$ pass git log --oneline
+f5337ac Add given password for web/example-forum to store.
+a002b45 Add current contents of password store.
+$ git init --bare ~/pass-lab/store-remote.git
+Initialized empty Git repository in ~/pass-lab/store-remote.git/
+$ pass git remote add origin file://~/pass-lab/store-remote.git
+$ pass git push -u origin main
+To file://~/pass-lab/store-remote.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+$ git clone file://~/pass-lab/store-remote.git ~/pass-lab/clone2
+Cloning into '~/pass-lab/clone2'...
+$ PASSWORD_STORE_DIR=~/pass-lab/clone2 pass ls
+Password Store
+|-- banking
+|   `-- example-bank
+|-- email
+|   `-- example-mail
+|-- shopping
+|   `-- example-store
+|-- social
+|   `-- example-social
+|-- web
+|   `-- example-forum
+`-- wifi
+    `-- home-router
+$ PASSWORD_STORE_DIR=~/pass-lab/clone2 pass show email/example-mail
+sunrise-42-harbor

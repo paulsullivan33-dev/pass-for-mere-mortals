@@ -1,0 +1,12 @@
+$ find ~/.password-store -type f | sort
+~/.password-store/.gpg-id
+~/.password-store/banking/example-bank.gpg
+~/.password-store/email/example-mail.gpg
+~/.password-store/social/example-social.gpg
+~/.password-store/wifi/home-router.gpg
+$ file ~/.password-store/email/example-mail.gpg
+~/.password-store/email/example-mail.gpg: data
+$ grep -r 'sunrise-42-harbor' ~/.password-store/
+grep exit: 1
+$ gpg --batch --decrypt ~/.password-store/email/example-mail.gpg
+sunrise-42-harbor
